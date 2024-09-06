@@ -8,7 +8,7 @@ import random
 import json
 
 
-N: int = 3
+N: int = 10
 sample_ms = 10.0
 on_ms = 500
 
@@ -74,12 +74,12 @@ def scorer(t: list[int | None]) -> None:
 if __name__ == "__main__":
     # using "if __name__" allows us to reuse functions in other script files
 
-    led = Pin(15 Pin.OUT)
+    led = Pin(15, Pin.OUT)
     button = Pin(14, Pin.IN, Pin.PULL_UP)
 
     t: list[int | None] = []
 
-    blinker(10, led)
+    blinker(3, led)
 
     for i in range(N):
         time.sleep(random_time_interval(0.5, 5.0))
