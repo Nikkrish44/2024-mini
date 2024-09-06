@@ -110,9 +110,9 @@ if __name__ == "__main__":
     for i in intervals:
         total+=i
         count+=1
-        if i<min
+        if i<min:
             min=i
-        if i>max
+        if i>max:
             max=i
         
     average = total/count
@@ -121,3 +121,7 @@ if __name__ == "__main__":
     blinker(5, led)
 
     scorer(t)
+    print("Average: " + str(average))
+    print("Minimum: " + str(min))
+    print("Maximum: " + str(max))
+
