@@ -58,11 +58,17 @@ def scorer(t: list[int | None]) -> None:
     # and score (non-misses / total flashes) i.e. the score a floating point number
     # is in range [0..1]
     data = {}
-    minT = min(t)
-    maxT = max(t)
-    avgT = sum(t)/N
-    score = (N-misses)/N
+    min_value = min(value for value in t if value is not None)
+    max_value = max(value for value in t if value is not None)
+    avg_value = sum(value for value in t if value is not None)/N
+    score = misses/N
     
+    data['min'] = min_value
+    data['max'] = max_value
+    data['avg'] = avg_value
+    data['score'] = score
+    
+
     # %% make dynamic filename and write JSON
 
     now: tuple[int] = time.localtime()
