@@ -82,12 +82,7 @@ if __name__ == "__main__":
     blinker(3, led)
 
     for i in range(N):
-        #declare the random interval seperately so that we can store it in an array
-        rand_interval = random_time_interval(0.5, 5.0)
-        intervals = []
-        intervals.append(rand_interval)
-        
-        time.sleep(rand_interval)
+        time.sleep(random_time_interval(0.5, 5.0))
 
         led.high()
 
@@ -102,26 +97,6 @@ if __name__ == "__main__":
 
         led.low()
 
-    #compute array average, min, and max
-    total=0
-    count=0
-    min = intervals[0]
-    max = intervals[0]
-    for i in intervals:
-        total+=i
-        count+=1
-        if i<min:
-            min=i
-        if i>max:
-            max=i
-        
-    average = total/count
-    
-    
     blinker(5, led)
 
     scorer(t)
-    print("Average: " + str(average))
-    print("Minimum: " + str(min))
-    print("Maximum: " + str(max))
-
