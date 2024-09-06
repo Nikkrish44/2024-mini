@@ -74,12 +74,12 @@ def scorer(t: list[int | None]) -> None:
 if __name__ == "__main__":
     # using "if __name__" allows us to reuse functions in other script files
 
-    led = Pin("LED", Pin.OUT)
-    button = Pin(16, Pin.IN, Pin.PULL_UP)
+    led = Pin(15 Pin.OUT)
+    button = Pin(14, Pin.IN, Pin.PULL_UP)
 
     t: list[int | None] = []
 
-    blinker(3, led)
+    blinker(10, led)
 
     for i in range(N):
         time.sleep(random_time_interval(0.5, 5.0))
