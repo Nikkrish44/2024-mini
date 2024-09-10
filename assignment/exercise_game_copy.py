@@ -1,23 +1,21 @@
 import network # Only possible when installing the Pi Pico W version of MicroPython
 import time
-import urequests
-import json
 
 # CONNECT TO WIFI
 def connect_to_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect(ssid, password)
-    
     if not wlan.isconnected():
-        print('Attempting to connect')
+        print('Connecting to network...')
         wlan.connect(ssid, password)
         while not wlan.isconnected():
             time.sleep(1)
-            
-    print('Connected!')
+    print('Network connected:', wlan.ifconfig())
     
 connect_to_wifi('iPhone (3889)', 'password')
+
+import urequests
+import json
 
 # POST TO DATABASE
 def send_data_to_firebase(data):
