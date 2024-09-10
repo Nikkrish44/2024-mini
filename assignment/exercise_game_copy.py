@@ -1,46 +1,45 @@
-import network
+import network # Only possible when installing the Pi Pico W version of MicroPython
 import time
-
-def connect_to_wifi(ssid, password):
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
-    if not wlan.isconnected():
-        print('Connecting to network...')
-        wlan.connect(ssid, password)
-        while not wlan.isconnected():
-            time.sleep(1)
-    print('Network connected:', wlan.ifconfig())
-    
-connect_to_wifi('iPhone (3889)', 'password')
-
 import urequests
 import json
 
-def send_data_to_firebase(data):
-    url = 'https://ec463-miniproject-38c6e-default-rtdb.firebaseio.com/.json'  # Change 'data' to the path in your DB
-    headers = {'Content-Type': 'application/json'}
+# CONNECT TO WIFI
+def connect_to_wifi(ssid, password):
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
     
+    if not wlan.isconnected():
+        print('Attempting to connect')
+        wlan.connect(ssid, password)
+        while not wlan.isconnected():
+            time.sleep(1)
+            
+    print('Connected!')
+    
+connect_to_wifi('iPhone (3889)', 'password')
+
+# POST TO DATABASE
+def send_data_to_firebase(data):
+    url = 'https://ec463-miniproject-38c6e-default-rtdb.firebaseio.com/.json'
+    headers = {'Content-Type': 'application/json'}
+
     try:
         response = urequests.post(url, data=json.dumps(data), headers=headers)
         print('Response:', response.text)
         response.close()
     except Exception as e:
-        print('Error sending data:', e)
+        print('Error:', e)
 
-"""
-Response time - single-threaded
-"""
-
+# GAME CODE
 from machine import Pin
 import time
 import random
 import json
 
-
 N: int = 10
 sample_ms = 10.0
 on_ms = 500
-
 
 def random_time_interval(tmin: float, tmax: float) -> float:
     """return a random time interval between max and min"""
@@ -58,21 +57,9 @@ def blinker(N: int, led: Pin) -> None:
 
 
 def write_json(json_filename: str, data: dict) -> None:
-    """Writes data to a JSON file.
-
-    Parameters
-    ----------
-
-    json_filename: str
-        The name of the file to write to. This will overwrite any existing file.
-
-    data: dict
-        Dictionary data to write to the file.
-    """
 
     with open(json_filename, "w") as f:
         json.dump(data, f)
-
 
 def scorer(t: list[int | None]) -> None:
     # %% collate results
@@ -83,9 +70,7 @@ def scorer(t: list[int | None]) -> None:
 
     print(t_good)
 
-    # add key, value to this dict to store the minimum, maximum, average response time
-    # and score (non-misses / total flashes) i.e. the score a floating point number
-    # is in range [0..1]
+    # DICTIONARY WITH MIN, MAX, AVG, AND COUNT
     data = {}
     min_value = min(value for value in t if value is not None)
     max_value = max(value for value in t if value is not None)
@@ -109,10 +94,14 @@ def scorer(t: list[int | None]) -> None:
 
     write_json(filename, data)
 
+    # WHEN GAME IS COMPLETE, POST TO DATABASE
+    send_data_to_firebase(data)
+
 
 if __name__ == "__main__":
     # using "if __name__" allows us to reuse functions in other script files
 
+    # CHANGED TO PIN 15 FOR EASE OF USE -- 'LED' PIN DID NOTHING
     led = Pin(15, Pin.OUT)
     button = Pin(14, Pin.IN, Pin.PULL_UP)
 
@@ -139,5 +128,6 @@ if __name__ == "__main__":
     blinker(5, led)
 
     scorer(t)
-    
-send_data_to_firebase(data)
+
+
+
