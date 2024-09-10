@@ -61,7 +61,7 @@ def scorer(t: list[int | None]) -> None:
     min_value = min(value for value in t if value is not None)
     max_value = max(value for value in t if value is not None)
     avg_value = sum(value for value in t if value is not None)/N
-    score = misses/N
+    score = (N-misses)/N
     
     data['min'] = min_value
     data['max'] = max_value
