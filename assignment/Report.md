@@ -6,3 +6,4 @@ and the value of 20000 for min_bright corresponded to a 0% duty cycle of the led
 //the max bright value we found was 45000 and when shining a phone flashlight we were able to achieve around 100% duty cycle with the led.
 
 Exercise 2:
+We played the happy birthday song using an array of frequencies and iterating through this array while simultaneously iterating through a second array for sound durations.
