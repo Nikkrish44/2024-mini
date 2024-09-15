@@ -7,3 +7,6 @@ and the value of 20000 for min_bright corresponded to a 0% duty cycle of the led
 
 Exercise 2:
 We played the happy birthday song using an array of frequencies and iterating through this array while simultaneously iterating through a second array for sound durations.
+
+Exercise 3: We included dictionary entries for the average reaction time, max time, min time, and score, doing the appropriate calculations with the variables given.
+We uploaded our reaction time data onto this link:
