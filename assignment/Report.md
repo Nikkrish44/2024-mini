@@ -26,7 +26,7 @@ Nikhil included dictionary entries for the average reaction time, max time, min 
 
 Louis set up a realtime database through Firebase and added code to connect the Pi Pico to a wireless network (we used an iPhone hotspot), as well as code to post the data from the dictionary to the database. 
 
-We chose Firebase simply because it was recommened to us by the Professors. However, it came with the advantage of being free for small sets of data like ours. Furthermore, we were able to add multiple users to the database. Here is a screenshot showing multiple users on the database:
+We chose Firebase simply because it was recommended to us by the Professors. However, it came with the advantage of being free for small sets of data like ours. Furthermore, we were able to add multiple users to the database. Here is a screenshot showing multiple users on the database:
 
 <img width="949" alt="Screenshot 2024-09-15 at 3 50 06 PM" src="https://github.com/user-attachments/assets/195aa16f-5d9a-4518-8aa3-a363bd265895">
 
