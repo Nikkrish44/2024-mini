@@ -14,10 +14,10 @@ And here is a sample screenshot of what our outputs looked like:
 
 
 ## Exercise 2:
-We decided to play 'happy birthday'  using an array of frequencies and iterating through this array while simultaneously iterating through a second array for sound durations. 
+We decided to play 'happy birthday'  using an array of frequencies and iterating through this array while simultaneously iterating through a second array for sound durations. We also added intermediate low frequencies to mimic pauses to make the song more accurate to the original.
 
 Here is a link to a video of the speaker playing:
-[ADD DEMONSTRATION VIDEO]
+https://drive.google.com/file/d/1PU2-k-kd_ZVdn1fpAKioR1oSaS4RHwXk/view?usp=sharing
 
 ## Exercise 3: 
 The two of us each took on one part of the exercise. Nikhil handled the computations stipulated in question 1, and Louis handled the cloud component stipulated in question 2. 
