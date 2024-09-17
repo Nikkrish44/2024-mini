@@ -10,7 +10,9 @@ Here is a link to a video demonstrating functionality:
 [ADD DEMONSTRATION VIDEO]
 
 And here is a sample screenshot of what our outputs looked like:
-[ADD SCREENSHOT]
+
+<img width="1444" alt="Screenshot 2024-09-16 at 8 28 27 PM" src="https://github.com/user-attachments/assets/f5f1e54d-9564-4941-86b1-f11adec7f790">
+
 
 ## Exercise 2:
 We decided to play 'happy birthday'  using an array of frequencies and iterating through this array while simultaneously iterating through a second array for sound durations. 
