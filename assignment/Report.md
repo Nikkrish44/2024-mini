@@ -36,4 +36,16 @@ Here is a screenshot of what the database looks like. In this example, there are
 
 <img width="1123" alt="Screenshot 2024-09-15 at 3 54 42 PM" src="https://github.com/user-attachments/assets/a1afbb3c-c7c9-47c3-a7d2-794abe5b190c">
 
+We also added email/password identification. Here is a sample email we added for test purposes:
+<img width="951" alt="Screenshot 2024-09-17 at 5 27 07 PM" src="https://github.com/user-attachments/assets/94494cda-d5e0-48f1-be95-8f7427f72164">
+
+
+This is what our console looks like if authentication is successful:
+<img width="626" alt="Screenshot 2024-09-17 at 5 22 06 PM" src="https://github.com/user-attachments/assets/20ec7096-14cd-4a54-b65c-6ea785a60fa9">
+
+
+And this is what it looks like if authentication fails. Although a json is written, no data is uploaded.
+<img width="1326" alt="Screenshot 2024-09-17 at 5 26 26 PM" src="https://github.com/user-attachments/assets/0a6100cf-5eef-4f22-9734-dedd3994e7c9">
+
+
 Lastly, here is a video demonstrating functionality and showing the database update: https://drive.google.com/file/d/1mjBd9Gwlzm3PsBrJByQgrdvRtoOMUg8I/view?usp=sharing 
