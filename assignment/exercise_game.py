@@ -68,9 +68,6 @@ def send_data_to_firebase(data):
     except Exception as e:
         print('Error:', e)
 
-
-
-
 # GAME CODE
 from machine import Pin
 import random
