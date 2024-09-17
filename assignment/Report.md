@@ -36,5 +36,4 @@ Here is a screenshot of what the database looks like. In this example, there are
 
 <img width="1123" alt="Screenshot 2024-09-15 at 3 54 42 PM" src="https://github.com/user-attachments/assets/a1afbb3c-c7c9-47c3-a7d2-794abe5b190c">
 
-Lastly, here is a video demonstrating functionality and showing the database update:
-[ADD DEMONSTRATION VIDEO]
+Lastly, here is a video demonstrating functionality and showing the database update: https://drive.google.com/file/d/1mjBd9Gwlzm3PsBrJByQgrdvRtoOMUg8I/view?usp=sharing 
