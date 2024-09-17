@@ -4,10 +4,9 @@ min_bright value: 20000
 
 We tested this in a fairly bright photonics lab room, so to achieve a dim light we considered casting a shadow with our hand over the photocell to qualify, and the value of 20000 for min_bright corresponded to a 0% duty cycle of the led when shadowing the photocell. 
 
-The max bright value we found was 45000 and when shining a phone flashlight we were able to achieve around 100% duty cycle with the led.
+The max bright value we found was 45000 and when shining a phone flashlight, with which we were able to achieve around 100% duty cycle with the led.
 
-Here is a link to a video demonstrating functionality:
-[ADD DEMONSTRATION VIDEO]
+Here is a link to a video demonstrating functionality: https://drive.google.com/file/d/1MD91R06Ij8we5C2N15FImy1ggMwsIcr8/view?usp=sharing
 
 And here is a sample screenshot of what our outputs looked like:
 
