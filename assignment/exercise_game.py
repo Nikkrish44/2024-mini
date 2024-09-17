@@ -5,14 +5,17 @@ import time
 def connect_to_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
+    
     if not wlan.isconnected():
-        print('Connecting to network...')
+        print('Connecting')
         wlan.connect(ssid, password)
         while not wlan.isconnected():
             time.sleep(1)
+            
     print('Network connected:', wlan.ifconfig())
-    
-connect_to_wifi('iPhone (3889)', 'password')
+
+# NEED TO CHANGE THESE VARIABLES TO CONNECT TO YOUR OWN NETWORK
+connect_to_wifi('my_ssid', 'my_password')
 
 import urequests
 import json
